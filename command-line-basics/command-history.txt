@@ -1,0 +1,62 @@
+    1  git branch command-line-basics
+    2  git switch command-line-basics 
+    3  cd command-line-basics/
+    4  man man
+    5  man cat
+    6  cat -
+    7  man cat
+    8  cat laziness.txt 
+    9  cat impatience
+   10  cat impatience.txt
+   11  cat hubris.txt 
+   12  cat laziness.txt impatience.txt hubris.txt 
+   13  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   14  cat three-virtues.txt 
+   15  man cat
+   16  man ls
+   17  ls 
+   18  ls -a
+   19  ls -a -F
+   20  ls lfz-staff/
+   21  ls lfz-staff/ -a -F
+   22  ls -aF lfz-staff > lfz-staff/contents.txt
+   23  cat lfz-staff/contents.txt 
+   24  man pwd
+   25  man echo
+   26  man touch
+   27  pwd > i-was-here.txt
+   28  ls
+   29  echo 'Hello, World!' > hello.txt
+   30  cat hello.txt 
+   31  touch tag-youre-it.txt
+   32  touch snoot/boop.txt
+   33  ls snoot/
+   34  cat snoot/boop.txt 
+   35  man mkdir
+   36  mkdir parent
+   37  ls
+   38  mkdir -p parent/child/grandchild
+   39  touch parent/child/grandchild/
+   40  ls -a parent/child/grandchild/
+   41  ls -a parent/child/grandchild
+   42  man touch
+   43  touch parent/child/grandchild/.gitkeep
+   44  ls -a parent/child/grandchild
+   45  man mv
+   46  man mv
+   47  mv pokiemans/ pokemon
+   48  ls
+   49  man rm
+   50  rm lol.txt 
+   51  rm -r kill-me/
+   52  man cp
+   53  cp and-then.txt no-and-then.txt
+   54  cat and-then.txt no-and-then.txt 
+   55  man history
+   56  history
+   57  cd ..
+   58  git add command-line-basics/
+   59  git commit -m "complete command-line-basics"
+   60  git push origin command-line-basics 
+   61  cd command-line-basics/
+   62  history > command-history.txt
