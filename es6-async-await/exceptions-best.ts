@@ -32,7 +32,7 @@ async function throwChained(): Promise<void> {
   console.log(elapsed(), 'throwChained3:', subResult2);
 }
 
-async function throwAll() {
+async function throwAll():Promise<void> {
   try {
     await throwOnce();
     await throwSeveral();
