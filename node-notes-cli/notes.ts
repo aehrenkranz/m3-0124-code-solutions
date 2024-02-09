@@ -5,6 +5,9 @@ type Data = {
 };
 const desiredFunction = process.argv[2];
 
+const desiredEntry = process.argv[4];
+const notesEntered = process.argv[3];
+
 if (desiredFunction === 'read') {
   const entries = await read();
   for (const entryNumber in entries.notes) {
@@ -12,10 +15,10 @@ if (desiredFunction === 'read') {
   }
 }
 if (desiredFunction === 'create') {
-  create();
+  create(notesEntered);
 }
 if (desiredFunction === 'update') {
-  update();
+  update(desiredEntry, notesEntered);
 }
 
 async function read(): Promise<Data> {
@@ -29,11 +32,11 @@ async function read(): Promise<Data> {
   return results;
 }
 
-async function create(): Promise<void> {
+async function create(notes: string): Promise<void> {
   let results;
   try {
     const data = await read();
-    data.notes[data.nextId] = process.argv[3];
+    data.notes[data.nextId] = notes;
     data.nextId++;
     const newData = JSON.stringify(data, null, 2);
     results = await writeFile('data.json', newData);
@@ -43,12 +46,12 @@ async function create(): Promise<void> {
   return results;
 }
 
-async function update(): Promise<void> {
+async function update(entry: string, notes: string): Promise<void> {
   let results;
   try {
     const data = await read();
-    if (data.notes[process.argv[3]]) {
-      data.notes[process.argv[3]] = process.argv[4];
+    if (data.notes[entry]) {
+      data.notes[entry] = notes;
       const newData = JSON.stringify(data, null, 2);
       results = await writeFile('data.json', newData);
     } else {
