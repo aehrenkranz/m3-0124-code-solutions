@@ -104,6 +104,9 @@ app.put('/api/notes/:id', async (req, res) => {
     if (!content) {
       res.status(400).json({ error: 'Error: Content is a required field.' });
     }
+    if (!entries.notes[id]) {
+      res.status(404).json({ error: `Error: Cannot find note with ID ${id}.` });
+    }
     const note = {
       id,
       content,
