@@ -9,9 +9,9 @@ Answer the following questions in the provided markdown file before turning in t
 - What browser function can be used to make HTTP requests to a server in React?
   -get request
 - How do you use `useEffect` to load component data just once when the component mounts?
-  -add a conditional
+  -set the conditional array to be an empty array
 - How do you use `useEffect` to load component data every time the data key changes?
-  -add a conditional
+  -set the conditional array to be the same as the data key
 - In a large-scale production app, what are some better alternatives for loading and managing backend data?
   -react query, vercel swr
 
